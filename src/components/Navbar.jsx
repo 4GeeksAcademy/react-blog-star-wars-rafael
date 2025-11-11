@@ -1,19 +1,21 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+const Navbar = () => (
+  <nav className="navbar navbar-dark bg-dark px-3">
+    <Link className="navbar-brand text-warning fw-bold" to="/">
+      StarWars Blog
+    </Link>
+    <div>
+      <Link className="btn btn-outline-warning me-2" to="/planets">
+        Planets
+      </Link>
+      <Link className="btn btn-outline-warning me-2" to="/vehicles">
+        Vehicles
+      </Link>
+      <button className="btn btn-warning">Favorites (0)</button>
+    </div>
+  </nav>
+);
 
-	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
-	);
-};
+export default Navbar;
